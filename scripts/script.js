@@ -16,13 +16,15 @@ let luceAccesa = false;
 
 // --- Funzioni ---
 
+// --- Funzione lampadina accesa ---
 function setStatoAcceso() {
-    immagineLampadina.innerHTML = lampadinaAccesa;
-    statoInterruttore.textContent = 'Interruttore ACCESO';
-    commentoInterruttore.textContent = 'HAI VISTO? Adesso ricordati di spegnerla prima di andare via';
-    wrapper.classList.add('is-on')
+    immagineLampadina.innerHTML = lampadinaAccesa;                                                      //Cambio immagine
+    statoInterruttore.textContent = 'Interruttore ACCESO';                                              //Cambio stato interruttore
+    commentoInterruttore.textContent = 'HAI VISTO? Adesso ricordati di spegnerla prima di andare via';  //Cambio frase dinamica
+    wrapper.classList.add('is-on');                                                                     //Quando è accesa aggiungo l'utility is on
 }
 
+// --- Funzione lampadina spenta ---
 function setStatospento() {
     immagineLampadina.innerHTML = lampadinaSpenta;
     statoInterruttore.textContent = 'Interruttore SPENTO';
@@ -30,15 +32,17 @@ function setStatospento() {
     wrapper.classList.remove('is-on');
 }
 
+// Funzione che mi gestisce l'interruttore
 function gestisciInterruttore() {
-    if (luceAccesa === false) {
-        luceAccesa = true;
-        setStatoAcceso();
+    if (luceAccesa === false) {            //Quando la variabile luce è in stato "false" (Valore default dichiarato in precendeza)
+        luceAccesa = true;                 // Trasformala in Vero
+        setStatoAcceso();                  // Ed esegui la funzione dello stato acceso
     } else {
-        luceAccesa = false;
-        setStatospento();
+        luceAccesa = false;                // Altrimenti falla ritornare in "false" 
+        setStatospento();                  // ed esegui la funzione dello stato spento
     }
 }
 
 // --- Eventi ---
-interruttoreLuce.addEventListener('click', gestisciInterruttore);
+
+interruttoreLuce.addEventListener('click', gestisciInterruttore); // Quando clicco sul bottone esegui la funzione gestisci interruttore.
