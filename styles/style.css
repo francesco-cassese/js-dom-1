@@ -13,7 +13,7 @@
 /* --- ROOT --- */
 
 :root {
-    --slider-color: #FFF9AE;
+    --slider-color: #ffdb1a;
     --bg-wrapper-ON: #fff;
     --bg-wrapper-OFF: #000;
     --txt-color-main: #000;
@@ -60,7 +60,7 @@
     position: relative;
     display: inline-block;
     width: 70px;
-    height: 30px;
+    height: 31px;
 }
 
 /* Nasconde il checkbox ma lo mantiene interattivo */
@@ -107,7 +107,7 @@ input:checked+.slider {
 
 /* Muove il pallino quando cliccato */
 input:checked+.slider::before {
-    transform: translateX(40px);
+    transform: translateX(39px);
 }
 
 /*
