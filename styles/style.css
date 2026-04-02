@@ -13,16 +13,21 @@
 /* --- ROOT --- */
 
 :root {
-    --slider--color: #FFF9AE;
+    --slider-color: #FFF9AE;
+    --bg-wrapper-ON: #fff;
+    --bg-wrapper-OFF: #000;
+    --txt-color-main: #000;
 }
 
+/* --- Utilities --- */
+
 .wrapper.is-on {
-    background-color: #FFF;
+    background-color: var(--bg-wrapper-ON);
     transition: background-color 0.4s ease;
 }
 
 .wrapper.is-on .text-main {
-    color: black;
+    color: var(--txt-color-main);
     transition: color 0.4s ease;
 }
 
@@ -34,7 +39,7 @@
 
 .wrapper {
     height: 100vh;
-    background-color: black;
+    background-color: var(--bg-wrapper-OFF);
     transition: background-color 0.4s ease;
     display: flex;
     justify-content: center;
@@ -75,14 +80,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid var(--slider--color);
+    border: 2px solid var(--slider-color);
     background-color: #ccc;
     transition: .4s;
     border-radius: 20px;
     z-index: 1;
 }
 
-/* Il "pallino" (Thumb) */
+/* Il "pallino"  */
 .slider::before {
     position: absolute;
     content: "";
@@ -97,7 +102,7 @@
 
 /* Cambia sfondo quando cliccato */
 input:checked+.slider {
-    background-color: var(--slider--color);
+    background-color: var(--slider-color);
 }
 
 /* Muove il pallino quando cliccato */
