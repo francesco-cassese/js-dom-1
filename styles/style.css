@@ -10,6 +10,12 @@
     box-sizing: border-box;
 }
 
+/* --- ROOT --- */
+
+:root {
+    --slider--color: #FFF9AE;
+}
+
 /*
     =====================================
     MAIN
@@ -22,4 +28,68 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+/* --- Immagine lampadina --- */
+
+.img-lampadina {
+    display: block;
+    object-fit: cover;
+}
+
+/* --- SLIDER --- */
+
+.switch-container {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+}
+
+/* Nasconde il checkbox ma lo mantiene interattivo */
+.switch-container input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* La "pista" dello switch */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--slider--color);
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* Il "pallino" (Thumb) */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    aspect-ratio: 1;
+    bottom: 0px;
+    left: 0px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Cambia sfondo quando cliccato */
+input:checked+.slider {
+    background-color: var(--slider--color);
+}
+
+/* Muove il pallino quando cliccato */
+input:checked+.slider::before {
+    transform: translateX(40px);
 }
