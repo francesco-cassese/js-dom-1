@@ -22,7 +22,7 @@ function accendiLampadina() {
         //ACCENDI
         immagineLampadina.innerHTML = lampadinaAccesa;
         statoInterruttore.textContent = 'Interruttore ACCESO';
-        commentoInterruttore.innerHTML = 'HAI VISTO? Adesso ricordati di spegnerla prima di andare via';
+        commentoInterruttore.textContent = 'HAI VISTO? Adesso ricordati di spegnerla prima di andare via';
         wrapper.classList.add('is-on')
     } else {
         luceAccesa = false;
