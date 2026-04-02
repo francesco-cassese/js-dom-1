@@ -15,24 +15,30 @@ const lampadinaSpenta = '<img src="./img/white_lamp.png" alt="lampadina accesa" 
 let luceAccesa = false;
 
 // --- Funzioni ---
-function accendiLampadina() {
+
+function setStatoAcceso() {
+    immagineLampadina.innerHTML = lampadinaAccesa;
+    statoInterruttore.textContent = 'Interruttore ACCESO';
+    commentoInterruttore.textContent = 'HAI VISTO? Adesso ricordati di spegnerla prima di andare via';
+    wrapper.classList.add('is-on')
+}
+
+function setStatospento() {
+    immagineLampadina.innerHTML = lampadinaSpenta;
+    statoInterruttore.textContent = 'Interruttore SPENTO';
+    commentoInterruttore.textContent = 'Clicca qui e guarda la magia';
+    wrapper.classList.remove('is-on');
+}
+
+function gestisciInterruttore() {
     if (luceAccesa === false) {
         luceAccesa = true;
-
-        //ACCENDI
-        immagineLampadina.innerHTML = lampadinaAccesa;
-        statoInterruttore.textContent = 'Interruttore ACCESO';
-        commentoInterruttore.textContent = 'HAI VISTO? Adesso ricordati di spegnerla prima di andare via';
-        wrapper.classList.add('is-on')
+        setStatoAcceso();
     } else {
         luceAccesa = false;
-        //SPEGNI
-        immagineLampadina.innerHTML = lampadinaSpenta;
-        statoInterruttore.textContent = 'Interruttore SPENTO';
-        commentoInterruttore.textContent = 'Clicca qui e guarda la magia';
-        wrapper.classList.remove('is-on');
+        setStatospento();
     }
 }
 
 // --- Eventi ---
-interruttoreLuce.addEventListener('click', accendiLampadina);
+interruttoreLuce.addEventListener('click', gestisciInterruttore);
