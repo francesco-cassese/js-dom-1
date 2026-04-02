@@ -106,6 +106,6 @@ input:checked+.slider::before {
     text-align: center;
 }
 
-.text-span-main {
-    font-size: 19px;
+.text-main {
+    font-size: 25px;
 }
