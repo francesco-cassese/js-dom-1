@@ -93,3 +93,15 @@ input:checked+.slider {
 input:checked+.slider::before {
     transform: translateX(40px);
 }
+
+/*
+    ===================================
+    TESTO DEL MAIN
+    ===================================
+*/
+
+.text-main {
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+}
