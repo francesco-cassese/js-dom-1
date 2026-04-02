@@ -17,23 +17,20 @@ let luceAccesa = false;
 // --- Funzioni ---
 function accendiLampadina() {
     if (luceAccesa === false) {
+        luceAccesa = true;
 
         //ACCENDI
         immagineLampadina.innerHTML = lampadinaAccesa;
-        luceAccesa = true;
-        statoInterruttore.innerHTML = ('<h3 class="title-main">Interruttore ACCESO</h3>');
-        commentoInterruttore.innerHTML = ('<p class="txt-main"> HAI VISTO? Adesso ricordati di spegnerla prima di andare via</p>');
-        wrapper.style.backgroundColor = 'white';
-        frasiDinamiche.style.color = 'black';
+        statoInterruttore.textContent = 'Interruttore ACCESO';
+        commentoInterruttore.innerHTML = 'HAI VISTO? Adesso ricordati di spegnerla prima di andare via';
+        wrapper.classList.add('is-on')
     } else {
-
+        luceAccesa = false;
         //SPEGNI
         immagineLampadina.innerHTML = lampadinaSpenta;
-        luceAccesa = false;
-        statoInterruttore.innerHTML = ('<h3 class="title-main">Interruttore SPENTO</h3>');
-        commentoInterruttore.innerHTML = ('<p class="txt-main">Clicca qui e guarda la magia</p>');
-        wrapper.style.backgroundColor = 'black';
-        frasiDinamiche.style.color = 'white';
+        statoInterruttore.textContent = 'Interruttore SPENTO';
+        commentoInterruttore.textContent = 'Clicca qui e guarda la magia';
+        wrapper.classList.remove('is-on');
     }
 }
 

@@ -16,6 +16,16 @@
     --slider--color: #FFF9AE;
 }
 
+.wrapper.is-on {
+    background-color: #FFF;
+    transition: background-color 0.4s ease;
+}
+
+.wrapper.is-on .text-main {
+    color: black;
+    transition: color 0.4s ease;
+}
+
 /*
     =====================================
     MAIN
