@@ -43,6 +43,8 @@ function gestisciInterruttore() {
     }
 }
 
+setStatospento();
+
 // --- Eventi ---
 
 interruttoreLuce.addEventListener('click', gestisciInterruttore); // Quando clicco sul bottone esegui la funzione gestisci interruttore.
