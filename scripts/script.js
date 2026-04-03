@@ -43,7 +43,7 @@ function gestisciInterruttore() {
     }
 }
 
-setStatospento();
+setStatospento();                          // Richiamo la funzione che parta al primo accesso nella pagina 
 
 // --- Eventi ---
 
